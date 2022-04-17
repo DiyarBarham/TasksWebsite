@@ -1,6 +1,7 @@
 package com.training.exercise.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -27,6 +28,13 @@ public class ProjectServiceImp implements ProjectService {
 	@Override
 	public Project save(Project project) {
 		return repo.save(project);
+	}
+
+	@Override
+	public Project FindById(int id) {
+		Optional<Project> p = repo.findById(id);
+		if(p.isPresent()) return p.get();
+		return null;
 	}
 
 	
