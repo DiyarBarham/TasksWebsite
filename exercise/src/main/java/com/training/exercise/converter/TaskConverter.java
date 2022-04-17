@@ -20,7 +20,7 @@ public class TaskConverter {
 		dto.setEmployees(task.getEmployees());
 		dto.setQualifications(task.getQualifications());
 		dto.setTask(task.getTask());
-		dto.setProject(task.getProject());
+//		dto.setProject(task.getProject());
 		return dto;
 	}
 	public Task dtoToEntity(TaskDto dto) {
@@ -32,7 +32,7 @@ public class TaskConverter {
 		task.setEmployees(dto.getEmployees());
 		task.setQualifications(dto.getQualifications());
 		task.setTask(dto.getTask());
-		task.setProject(dto.getProject());
+//		task.setProject(dto.getProject());
 		return task;
 	}
 	

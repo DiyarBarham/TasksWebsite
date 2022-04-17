@@ -16,7 +16,6 @@ public class EmployeeConverter {
 		dto.setId(employee.getId());
 		dto.setFName(employee.getFName());
 		dto.setLName(employee.getLName());
-		dto.setTasks(employee.getTasks());
 		dto.setDepartment(employee.getDepartment());
 		dto.setQualifications(employee.getQualifications());
 		return dto;
@@ -26,7 +25,6 @@ public class EmployeeConverter {
 		employee.setId(dto.getId());
 		employee.setFName(dto.getFName());
 		employee.setLName(dto.getLName());
-		employee.setTasks(dto.getTasks());
 		employee.setDepartment(dto.getDepartment());
 		employee.setQualifications(dto.getQualifications());
 		return employee;

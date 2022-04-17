@@ -1,4 +1,4 @@
-package com.training.exercise.taskservices;
+package com.training.exercise.services;
 
 import java.util.List;
 

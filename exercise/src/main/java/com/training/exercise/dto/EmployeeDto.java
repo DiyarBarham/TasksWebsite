@@ -16,7 +16,6 @@ public class EmployeeDto {
 	private Integer id;
 	private String fName;
 	private String lName;
-	private List<Task> tasks;
-	private Set<Qualification> qualifications = new HashSet<>();
+	private Set<Qualification> qualifications;
 	private Department department;
 }

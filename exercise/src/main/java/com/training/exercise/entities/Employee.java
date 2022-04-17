@@ -2,7 +2,6 @@ package com.training.exercise.entities;
 
 import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -18,6 +17,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import lombok.Data;
 
 @Entity
@@ -42,14 +45,14 @@ public class Employee {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedAt = new Date();
 	
-	@ManyToMany(mappedBy = "employees")
-	private List<Task> tasks;
-	
 	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "employees_qualifications", joinColumns = @JoinColumn(name = "employee_id"), inverseJoinColumns = @JoinColumn(name = "qualification_id"))
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
+	@JoinTable(name = "employees_qualifications", joinColumns = @JoinColumn(name = "employee_id"),
+				inverseJoinColumns = @JoinColumn(name = "qualification_id"))
 	private Set<Qualification> qualifications = new HashSet<>();
 	
 	@ManyToOne
+	@Cascade({CascadeType.SAVE_UPDATE, CascadeType.PERSIST})
 	@JoinColumn(name = "department_id")
 	private Department department;
 }

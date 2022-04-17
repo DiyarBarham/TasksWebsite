@@ -1,4 +1,4 @@
-package com.training.exercise.departmentservices;
+package com.training.exercise.services;
 
 import java.util.List;
 

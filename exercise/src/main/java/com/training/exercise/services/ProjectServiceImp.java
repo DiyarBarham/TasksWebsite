@@ -1,4 +1,4 @@
-package com.training.exercise.projectservices;
+package com.training.exercise.services;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.training.exercise.entities.Project;
+import com.training.exercise.entities.Task;
 import com.training.exercise.repositories.ProjectRepository;
 
 import lombok.AllArgsConstructor;
@@ -27,5 +28,7 @@ public class ProjectServiceImp implements ProjectService {
 	public Project save(Project project) {
 		return repo.save(project);
 	}
+
+	
 
 }

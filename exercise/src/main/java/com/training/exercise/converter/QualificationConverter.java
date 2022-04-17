@@ -14,16 +14,14 @@ public class QualificationConverter {
 		QualificationDto dto = new QualificationDto();
 		dto.setId(qualification.getId());
 		dto.setName(qualification.getName());
-		dto.setTasks(qualification.getTasks());
-		dto.setEmployees(qualification.getEmployees());
+
 		return dto;
 	}
 	public Qualification dtoToEntity(QualificationDto dto) {
 		Qualification qualification = new Qualification();
 		qualification.setId(dto.getId());
 		qualification.setName(dto.getName());
-		qualification.setTasks(dto.getTasks());
-		qualification.setEmployees(dto.getEmployees());
+
 		return qualification;
 	}
 	

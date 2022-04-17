@@ -14,9 +14,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import lombok.Data;
 
 @Entity
@@ -40,12 +45,18 @@ public class Project {
 	private Date updatedAt = new Date();
 	
 	@ManyToMany(fetch = FetchType.EAGER)
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
 	@JoinTable(name = "projects_status", joinColumns = @JoinColumn(name = "project_id"), inverseJoinColumns = @JoinColumn(name = "status_id"))
 	private Set<Status> status = new HashSet<>();
 	
 	@ManyToOne
+	@Cascade({CascadeType.SAVE_UPDATE, CascadeType.PERSIST})
 	@JoinColumn(name = "employee_id")
 	private Employee employee;
+	
+	@OneToMany
+	@Cascade(CascadeType.ALL)
+    private Set<Task> tasks = new HashSet<>();
 	
 	
 }

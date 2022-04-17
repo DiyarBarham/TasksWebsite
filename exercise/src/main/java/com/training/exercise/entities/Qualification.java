@@ -1,17 +1,23 @@
 package com.training.exercise.entities;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 import lombok.Data;
 
@@ -34,9 +40,5 @@ public class Qualification {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedAt = new Date();
 	
-	@ManyToMany(mappedBy = "qualifications")
-	private List<Task> tasks;
-	
-	@ManyToMany(mappedBy = "qualifications")
-	private List<Employee> employees;
+
 }

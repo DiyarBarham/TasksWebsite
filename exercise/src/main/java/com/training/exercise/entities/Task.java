@@ -14,9 +14,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import lombok.Data;
 
 @Entity
@@ -56,8 +61,8 @@ public class Task {
 	@ManyToOne
 	@JoinColumn(name = "task_id")
 	private Task task;
-	
-	@ManyToOne
-	@JoinColumn(name = "project_id")
-	private Project project;
+//	
+//	@ManyToOne
+//	@JoinColumn(name = "project_id")
+//	private Project project;
 }

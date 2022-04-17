@@ -11,6 +11,5 @@ public class QualificationDto {
 
 	private Integer id;
 	private String name;
-	private List<Task> tasks;
-	private List<Employee> employees;
+
 }
