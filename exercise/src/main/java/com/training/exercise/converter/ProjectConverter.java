@@ -17,6 +17,7 @@ public class ProjectConverter {
 		dto.setName(project.getName());
 		dto.setStatus(project.getStatus());
 		dto.setEmployee(project.getEmployee());
+		dto.setTasks(project.getTasks());
 		return dto;
 	}
 	public Project dtoToEntity(ProjectDto dto) {
@@ -25,6 +26,7 @@ public class ProjectConverter {
 		project.setName(dto.getName());
 		project.setStatus(dto.getStatus());
 		project.setEmployee(dto.getEmployee());
+		project.setTasks(dto.getTasks());
 		return project;
 	}
 	

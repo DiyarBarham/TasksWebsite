@@ -7,6 +7,7 @@ import com.training.exercise.entities.Project;
 
 public interface EmployeeService {
 	public List<Employee> ListAll();
+	public List<Employee> ListAllFree();
 	public Employee save(Employee employee);
 	public Employee FindById(int id);
 }
